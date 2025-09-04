@@ -1,1 +1,520 @@
-hola mundo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra Nevada - Sistema de Gestión Integral</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #857251;
+            --secondary-color: #cea964;
+            --dark-color: #212121;
+            --light-color: #f7f4ee;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://example.com/trucha-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 15px auto;
+        }
+        
+        .divider {
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+        
+        .module-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .module-card .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            border-radius: 10px 10px 0 0 !important;
+        }
+        
+        .stakeholder-table {
+            width: 100%;
+            margin: 30px 0;
+        }
+        
+        .stakeholder-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+        }
+        
+        .stakeholder-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .stakeholder-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .navbar-custom {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: white;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sierra Nevada</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Procesos de Inicio
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Visión del Proyecto</a></li>
+                            <li><a class="dropdown-item" href="#">Stakeholders</a></li>
+                            <li><a class="dropdown-item" href="#">Equipo Scrum</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Sprints
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Sprint 1</a></li>
+                            <li><a class="dropdown-item" href="#">Sprint 2</a></li>
+                            <li><a class="dropdown-item" href="#">Sprint 3</a></li>
+                            <li><a class="dropdown-item" href="#">Sprint 4</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Módulos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Producción</a></li>
+                            <li><a class="dropdown-item" href="#">Logística</a></li>
+                            <li><a class="dropdown-item" href="#">Comercialización</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar en el sitio">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Sistema de Gestión Integral</h1>
+            <p class="lead">Sierra Nevada - Optimizando la acuicultura de truchas</p>
+        </div>
+    </section>
+
+    <!-- Sección de Visión del Proyecto -->
+    <section class="container py-5">
+        <h2 class="section-title">VISIÓN DEL PROYECTO</h2>
+        
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p class="lead text-center">
+                    Desarrollar un sistema integral de gestión para la empresa "Sierra Nevada" que digitalice y optimice los procesos de producción, logística y comercialización de truchas.
+                </p>
+                <p class="text-center">
+                    El sistema mejorará la eficiencia operativa mediante alertas inteligentes, control de inventario, gestión de alimentación y seguimiento de ventas, reemplazando los métodos manuales actuales basados en hojas de cálculo y registros en papel.
+                </p>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Product Owner -->
+        <h3 class="mb-4">PRODUCT OWNER</h3>
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center mb-4">
+                <img src="https://example.com/po-avatar.jpg" alt="Product Owner" class="img-fluid rounded-circle" style="max-width: 200px;">
+            </div>
+            <div class="col-md-8">
+                <h4>Juan Pérez</h4>
+                <p>Responsable de definir las características del producto y priorizar las funcionalidades del sistema. Con amplia experiencia en procesos de acuicultura y gestión empresarial.</p>
+                <ul>
+                    <li>Email: juan.perez@sierranevada.com</li>
+                    <li>Teléfono: +51 987 654 321</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de Stakeholders -->
+    <section class="container py-5">
+        <h2 class="section-title">STAKEHOLDERS PRINCIPALES</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered stakeholder-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Interés en el Proyecto</th>
+                        <th>Influencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos Rodríguez</td>
+                        <td>Gerente General</td>
+                        <td>Alto - Decisiones estratégicas</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>María González</td>
+                        <td>Jefa de Producción</td>
+                        <td>Alto - Uso diario del sistema</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Roberto Sánchez</td>
+                        <td>Jefe de Logística</td>
+                        <td>Alto - Gestión de inventarios</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>Ana Martínez</td>
+                        <td>Jefa de Ventas</td>
+                        <td>Alto - Comercialización</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>Luis Fernández</td>
+                        <td>Contador</td>
+                        <td>Medio - Integración con SUNAT</td>
+                        <td>Media</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de Equipo Scrum -->
+    <section class="container py-5">
+        <h2 class="section-title">EQUIPO SCRUM</h2>
+        
+        <div class="row">
+            <!-- Scrum Master -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center h-100">
+                    <img src="https://example.com/scrum-master.jpg" class="card-img-top" alt="Scrum Master">
+                    <div class="card-body">
+                        <h5 class="card-title">Laura Mendoza</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Scrum Master</h6>
+                        <p class="card-text">Facilita el proceso Scrum y elimina impedimentos para el equipo de desarrollo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Programadores -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center h-100">
+                    <img src="https://example.com/dev1.jpg" class="card-img-top" alt="Desarrollador 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Miguel Torres</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Desarrollador Full Stack</h6>
+                        <p class="card-text">Especialista en frontend y bases de datos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center h-100">
+                    <img src="https://example.com/dev2.jpg" class="card-img-top" alt="Desarrollador 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sofía Ruiz</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Desarrolladora Backend</h6>
+                        <p class="card-text">Experta en APIs y lógica de negocio.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center h-100">
+                    <img src="https://example.com/dev3.jpg" class="card-img-top" alt="Desarrollador 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Javier López</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Desarrollador Full Stack</h6>
+                        <p class="card-text">Especialista en integraciones y DevOps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de Planificación de Sprints -->
+    <section class="container py-5">
+        <h2 class="section-title">PLANIFICACIÓN DE SPRINTS</h2>
+        
+        <div class="row">
+            <!-- Sprint 1 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        Sprint 1
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Duración: 4 semanas</h6>
+                        <ul class="ps-3">
+                            <li>Análisis de requisitos</li>
+                            <li>Diseño de base de datos</li>
+                            <li>Autenticación y autorización</li>
+                            <li>Estructura básica del sistema</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sprint 2 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        Sprint 2
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Duración: 4 semanas</h6>
+                        <ul class="ps-3">
+                            <li>Módulo de producción</li>
+                            <li>Gestión de jaulas y población</li>
+                            <li>Sistema de alertas básico</li>
+                            <li>Interfaz de administración</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sprint 3 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        Sprint 3
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Duración: 4 semanas</h6>
+                        <ul class="ps-3">
+                            <li>Módulo de logística</li>
+                            <li>Gestión de inventarios</li>
+                            <li>Planificación de compras</li>
+                            <li>Alertas de reposición</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sprint 4 -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        Sprint 4
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">Duración: 4 semanas</h6>
+                        <ul class="ps-3">
+                            <li>Módulo de comercialización</li>
+                            <li>Gestión de ventas y clientes</li>
+                            <li>Integración con SUNAT</li>
+                            <li>Reportes y dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de Módulos del Sistema -->
+    <section class="container py-5">
+        <h2 class="section-title">MÓDULOS DEL SISTEMA</h2>
+        
+        <div class="row">
+            <!-- Módulo de Producción -->
+            <div class="col-md-4 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        MÓDULO DE PRODUCCIÓN
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Sistema de gestión de jaulas y población piscícola con:</p>
+                        <ul>
+                            <li>Control de densidad por jaula según tamaño/edad de los peces</li>
+                            <li>Sistema de alertas para cambios de ubicación y oxigenación</li>
+                            <li>Cálculo automático de alimentación según categoría (cabeza, cuerpo, cola)</li>
+                            <li>Seguimiento de crecimiento y salud de los peces</li>
+                            <li>Planificación de movimientos entre jaulas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Módulo de Logística -->
+            <div class="col-md-4 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        MÓDULO DE LOGÍSTICA
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Sistema de gestión de inventario y compras con:</p>
+                        <ul>
+                            <li>Control de stock de alimentos, medicinas y equipos</li>
+                            <li>Planificación de compras cada 3 meses con proyecciones</li>
+                            <li>Seguimiento de vida útil de insumos y equipos</li>
+                            <li>Gestión de proveedores y tiempos de entrega</li>
+                            <li>Alertas de reposición y vencimientos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Módulo de Comercialización -->
+            <div class="col-md-4 mb-4">
+                <div class="card module-card h-100">
+                    <div class="card-header text-center">
+                        MÓDULO DE COMERCIALIZACIÓN
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Sistema de gestión de ventas y clientes con:</p>
+                        <ul>
+                            <li>Registro de los tres tipos de ventas: por toneladas, kilos a negocios, y unidad directa</li>
+                            <li>Planificación y preparación de pedidos según tipo de venta</li>
+                            <li>Gestión de clientes y historial de compras</li>
+                            <li>Seguimiento de entregas y logística de distribución</li>
+                            <li>Facturación electrónica e integración con SUNAT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de Requisitos Técnicos -->
+    <section class="container py-5">
+        <h2 class="section-title">REQUISITOS TÉCNICOS</h2>
+        
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p>El sistema contará con:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Sistema de autenticación y autorización con roles y permisos</li>
+                            <li>Interfaz responsive compatible con dispositivos móviles</li>
+                            <li>Panel de administración para gestión de usuarios</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>Base de datos centralizada con respaldos automáticos</li>
+                            <li>Sistema de notificaciones y alertas en tiempo real</li>
+                            <li>Reportes y dashboards personalizables</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sistema de Gestión Integral - Sierra Nevada</h5>
+                    <p>Optimizando los procesos de acuicultura mediante tecnología</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Contacto: info@sierranevada.com</p>
+                    <p>Teléfono: +51 123 456 789</p>
+                    <p>Última actualización: Noviembre 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
